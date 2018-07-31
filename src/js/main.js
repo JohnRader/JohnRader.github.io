@@ -117,23 +117,18 @@ Vue.component('portfolio',{
                     this.$emit('open0')
                 }
                 else if (index === 1) {
-                    alert(index)
                     this.$emit('open1')
                 }
                 else if (index === 2) {
-                    alert(index)
                     this.$emit('open2')
                 }
                 else if (index === 3) {
-                    alert(index)
                     this.$emit('open3')  
                 }
                 else if (index === 4) {
-                    alert(index)
                     this.$emit('open4') 
                 }
                 else if (index === 5) {
-                    alert(index)
                     this.$emit('open5')
                 }
             }
@@ -262,7 +257,7 @@ Vue.component('modaltab3',{
         
                 <div class="modal-body">
                     <slot name="body">
-                    I have been spending a lot of time recently trying out differnt JS frameworks to help improve workflow. Of the many I have tried, Vue and React are the two I am going to spend the most time learning and working with. Vue has been my favorite of the two as its been very easy to pick up and intergrate into existing projects. I have integrated this site with Vue as well and I hope to learn a lot more as I continue to use the framework. <br> <br> As expected with Web Development, my HTML and CSS knowledge is extensive and I have worked with many differnt libraries and framework such as Bootstrap, Picnic, and Animate. My current Web Development Github repo is located<a href="https://github.com/JohnRader/Vue-Projects"> Here.</a>It is a little thin as of now but I will be adding more projects in the near future.                    </slot>
+                    I have been spending a lot of time recently trying out differnt JS frameworks to help improve workflow. Of the many I have tried, Vue and React are the two I am going to spend the most time learning and working with. Vue has been my favorite of the two as its been very easy to pick up and intergrate into existing projects. I have integrated this site with Vue as well and I hope to learn a lot more as I continue to use the framework. <br> <br> As expected with Web Development, my HTML and CSS knowledge is extensive and I have worked with many differnt libraries and framework such as Bootstrap, Picnic, and Animate. My current Web Development Github repo is located<a href="https://github.com/JohnRader/Vue-Projects"> Here.</a> It is a little thin as of now but I will be adding more projects in the near future.                    </slot>
                 </div>
         
                 <div class="modal-footer">
@@ -407,11 +402,5 @@ var app = new Vue({
         showModal3: false,
         showModal4: false,
         showModal5: false,
-    },
-    methods: {
-        openModal0() {
-            this.showModal0 = true
-        }
-       
     }
 })

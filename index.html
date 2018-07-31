@@ -26,15 +26,18 @@
     <div id="app">
 
         <navbar></navbar>
-        <profile></profile>
-        <portfolio></portfolio>
 
-        <modaltab0 v-if="showModal0" @open0="openModal0" @close="showModal0 = false"></modaltab0>
-        <modaltab1 v-if="showModal1" @open1="showModal1 = true" @close="showModal1 = false"></modaltab1>
-        <modaltab2 v-if="showModal2" @open2="showModal2 = true" @close="showModal2 = false"></modaltab2>
-        <modaltab3 v-if="showModal3" @open3="showModal3 = true" @close="showModal3 = false"></modaltab3>
-        <modaltab4 v-if="showModal4" @open4="showModal4 = true" @close="showModal4 = false"></modaltab4>
-        <modaltab5 v-if="showModal5" @open5="showModal5 = true" @close="showModal5 = false"></modaltab5>
+        <profile></profile>
+        
+        <portfolio @open0="showModal0 = true" @open1="showModal1 = true" @open2="showModal2 = true" @open3="showModal3 = true" 
+        @open4="showModal4 = true" @open5="showModal5 = true"></portfolio>
+
+        <modaltab0 v-if="showModal0" @close="showModal0 = false"></modaltab0>
+        <modaltab1 v-if="showModal1" @close="showModal1 = false"></modaltab1>
+        <modaltab2 v-if="showModal2" @close="showModal2 = false"></modaltab2>
+        <modaltab3 v-if="showModal3" @close="showModal3 = false"></modaltab3>
+        <modaltab4 v-if="showModal4" @close="showModal4 = false"></modaltab4>
+        <modaltab5 v-if="showModal5" @close="showModal5 = false"></modaltab5>
 
         <contactinfo></contactinfo>
         
