@@ -1,7 +1,7 @@
 
 Vue.component('navbar',{
     template: ` 
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom  animated slideInDown">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom animated slideInDown text-uppercase">
         <div class="container">
             <div class="navbar-header page-scroll">
                 <a href="#page-top" class="navbar-brand"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
@@ -19,9 +19,6 @@ Vue.component('navbar',{
         </div>
     </nav>
     `,
-data(){
-
-}  
 })
 
 Vue.component('profile',{
@@ -33,6 +30,8 @@ Vue.component('profile',{
                         <img src="src/images/bluepic2.png" width ="300" height="auto" id="profPic" class="img-responsive img-thumbnail">
                     </div>
                 </div>
+
+            
     
             <!--NameTag-->
             <div class="container" id="nameTag">
@@ -58,230 +57,296 @@ Vue.component('profile',{
             </div>  
         </header>
         `,
-    data(){
 
-    }
 })
 
 Vue.component('portfolio',{
     template: `
             <section id="portfolio">
-
                 <div class="container">
+                    <div class="col-lg-12 text-center">
+                        <h2>Portfolio</h2>
+                        <hr class="star-primary">
+                    </div> 
+                    
                     <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2>Portfolio</h2>
-                            <hr class="star-primary">
+                        <div v-for="(picTab, index) in picTabs" class="col-sm-4 portfolio-item">
+                                <img :src="picTab.tabPic" class="img-thumbnail img-responsive cursor"
+                                @click="chooseModal(index)"></img>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-4 portfolio-item">
-                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                                <img src="src/images/pentest.png" class="img-responsive img-thumbnail" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 portfolio-item">
-                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                                <div class="caption">
-                                    <div class="caption-content">
-                                        
-                                    </div>
-                                </div>
-                                <img src="src/images/oop.png" class="img-responsive img-thumbnail" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 portfolio-item">
-                            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                                <img src="src/images/proglang.png" class="img-responsive img-thumbnail" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 portfolio-item">
-                            <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                                <img src="src/images/vue.png" class="img-responsive img-thumbnail" alt="">
-                            </a>
-                        </div>
-    
-                        <div class="col-sm-4 portfolio-item">
-                            <a href="./docs/JohnRader_Resume.pdf">
-                                <img src="src/images/resume-icon.png" class="img-responsive img-thumbnail" alt="">
-                            </a>
-                        </div>
-    
-                        <div class="col-sm-4 portfolio-item">
-                            <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                                <img src="src/images/github-mark.png" class="img-responsive img-thumbnail" alt="">
-                            </a>
-                        </div>
-                        
-                    </div>
                 </div>
             </section>
             `,
-        data: {
-          
 
-        },
-        methods: {
-            showModal: function(){
-                seen = true
+        data(){
+            return{
+                picTabs: [
+                    {
+                        tabName: "Programming: Penetration Testing",
+                        tabPic: './src/images/pentest.png',
+                    },
+                    {
+                        tabName: "Object-Oriented Programming",
+                        tabPic: './src/images/oop.png'
+                    },
+                    {
+                        tabName: "Programming Languages",
+                        tabPic: './src/images/proglang.png'
+                    },
+                    {
+                        tabName: "Reactivity Frameworks/Web Development",
+                        tabPic: './src/images/vue.png'
+                    },
+                    {
+                        tabName: "Resume",
+                        tabPic: './src/images/resume-icon.png'
+                    },
+                    {
+                        tabName: "Github",
+                        tabPic: './src/images/github-mark.png'
+                    },
+                ]
             }
-        }
+        },
+
+        methods: {
+            chooseModal(index) {
+                if (index === 0) {
+                    this.$emit('open0')
+                }
+                else if (index === 1) {
+                    alert(index)
+                    this.$emit('open1')
+                }
+                else if (index === 2) {
+                    alert(index)
+                    this.$emit('open2')
+                }
+                else if (index === 3) {
+                    alert(index)
+                    this.$emit('open3')  
+                }
+                else if (index === 4) {
+                    alert(index)
+                    this.$emit('open4') 
+                }
+                else if (index === 5) {
+                    alert(index)
+                    this.$emit('open5')
+                }
+            }
+        } 
+})
+
+Vue.component('modaltab0',{
+    template: `
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+            
+                    <div class="modal-header">
+                        <slot name="header">
+                        Programming: Penetration Testing
+                        </slot>
+                    </div>
+            
+                    <div class="modal-body">
+                        <slot name="body">
+                        One of the most interesting courses I've taken during my time at university, this class focuses on the many ways Web Applications and hardware can be vulnerable to attacks. Using Python, BASH, PowerShell, and PHP, we created scripts and applications to carry out a variety of different attacks that could be used in real world situations. The full library of projects can be found in my Programming_PenetrationTesing repo on Github located<a href="https://github.com/JohnRader/Programming_PenetrationTesting"> here.</a> <br>
+                        <br>
+                        Two of my favorite projects we were assigned included our own implimentation of a brute force attack using our own Python script and a buffer overflow expliot using shell code we wrote ourselves in Python as well. You can find the documentation and the source code for the brute force attack <a href="https://github.com/JohnRader/Programming_PenetrationTesting/tree/master/Project2"> here.</a> As for the buffer overflow exploit, those files can be found<a href="https://github.com/JohnRader/Programming_PenetrationTesting/tree/master/Project6"> here.</a>
+                        </slot>
+                    </div>
+            
+                    <div class="modal-footer">
+                        <slot name="footer">
+                        <button class="btn btn-default" @click="$emit('close')">
+                            Close
+                        </button>
+                        </slot>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </transition>
+        `
 })
 
 Vue.component('modaltab1',{
     template: `
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
+    <transition name="modal">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+        
+                <div class="modal-header">
+                    <slot name="header">
+                    Object-Oriented Programming
+                    </slot>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Object-Oriented Programming</h2>
-                                <hr class="star-primary">
-                                <p class="profiletabs">One of the most interesting courses I've taken during my time at university, this class focuses on the many ways Web Applications and hardware can be vulnerable to attacks. Using Python, BASH, PowerShell, and PHP, we created scripts and applications to carry out a variety of different attacks that could be used in real world situations. The full library of projects can be found in my Programming_PenetrationTesing repo on Github located<a href="https://github.com/JohnRader/Programming_PenetrationTesting"> here.</a> <br>
-                                    <br>
-                                    Two of my favorite projects we were assigned included our own implimentation of a brute force attack using our own Python script and a buffer overflow expliot using shell code we wrote ourselves in Python as well. You can find the documentation and the source code for the brute force attack <a href="https://github.com/JohnRader/Programming_PenetrationTesting/tree/master/Project2"> here.</a> As for the buffer overflow exploit, those files can be found<a href="https://github.com/JohnRader/Programming_PenetrationTesting/tree/master/Project6"> here.</a>
-                                    </p>  
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
+        
+                <div class="modal-body">
+                    <slot name="body">
+                    Along with Penetration Testing, Object-Oriented Programming was another exciting and fascinating class. We covered topics such as encapsulation, inheritance, polymorphism, abstraction, and patterns.
+                    I was able to learn how to use and libraries and SDKs to develop
+                    applications that provide data processing and visualization services. I was also able to create applications that
+                    managed threads and networking connections in our software. We used Java for the entirety of the course, most of the applications that I created in the class are posted to my Github repo located<a href="https://github.com/JohnRader/OOP_Projects"> here.</a>
+                    </slot>
                 </div>
+        
+                <div class="modal-footer">
+                    <slot name="footer">
+                    <button class="btn btn-default" @click="$emit('close')">
+                        Close
+                    </button>
+                    </slot>
+                </div>
+
             </div>
         </div>
-  
-        `,
-
-    data: {
-
-    },
-    methods: {
-        modalClose: function(){
-            this.$emit('close');
-        }
-    }
+    </div>
+    </transition>
+        `
 })
 
 Vue.component('modaltab2',{
     template: `
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
+    <transition name="modal">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+        
+                <div class="modal-header">
+                    <slot name="header">
+                    Programming Languages
+                    </slot>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Object-Oriented Programming</h2>
-                                <hr class="star-primary">
-                                <p class="profiletabs">Along with Penetration Testing, Object-Oriented Programming was another exciting and fascinating class. We covered topics such as encapsulation, inheritance, polymorphism, abstraction, and patterns.
-                                        I was able to learn how to use and libraries and SDKs to develop
-                                        applications that provide data processing and visualization services. I was also able to create applications that
-                                        managed threads and networking connections in our software. We used Java for the entirety of the course, most of the applications that I created in the class are posted to my Github repo located<a href="https://github.com/JohnRader/OOP_Projects"> here.</a></p>
-                                       
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
+        
+                <div class="modal-body">
+                    <slot name="body">
+                    Of the many differnt languages I have learned and worked with, Python JavaScript and Java are the three in which I would consider myself proficient in. I have spent four years now working with these languages, constantly expanding my knowledge and abilities. I have most recently been working with JavaScript and the many frameworks built for it. My current career aspiration is to become a software engineer, in particular a web developer. I have been spending many hours working on personal projects including this site, and will soon have more to post.
+                    </slot>
                 </div>
+        
+                <div class="modal-footer">
+                    <slot name="footer">
+                    <button class="btn btn-default" @click="$emit('close')">
+                        Close
+                    </button>
+                    </slot>
+                </div>
+
             </div>
         </div>
-        `,
-    data: {
-
-    },
-    methods:{
-
-    }
+    </div>
+    </transition>
+        `
 })
 
 Vue.component('modaltab3',{
     template: `
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
+    <transition name="modal">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+        
+                <div class="modal-header">
+                    <slot name="header">
+                    Reactivity Frameworks/Web Development
+                    </slot>
+                </div>
+        
+                <div class="modal-body">
+                    <slot name="body">
+                    I have been spending a lot of time recently trying out differnt JS frameworks to help improve workflow. Of the many I have tried, Vue and React are the two I am going to spend the most time learning and working with. Vue has been my favorite of the two as its been very easy to pick up and intergrate into existing projects. I have integrated this site with Vue as well and I hope to learn a lot more as I continue to use the framework. <br> <br> As expected with Web Development, my HTML and CSS knowledge is extensive and I have worked with many differnt libraries and framework such as Bootstrap, Picnic, and Animate. My current Web Development Github repo is located<a href="https://github.com/JohnRader/Vue-Projects"> Here.</a>It is a little thin as of now but I will be adding more projects in the near future.                    </slot>
+                </div>
+        
+                <div class="modal-footer">
+                    <slot name="footer">
+                    <button class="btn btn-default" @click="$emit('close')">
+                        Close
+                    </button>
+                    </slot>
+                </div>
 
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Programming Languages</h2>
-                                <hr class="star-primary">
-                                <p class="profiletabs">Of the many differnt languages I have learned and worked with, Python JavaScript and Java are the three in which I would consider myself proficient in. I have spent four years now working with these languages, constantly expanding my knowledge and abilities. I have most recently been working with JavaScript and the many frameworks built for it. My current career aspiration is to become a software engineer, in particular a web developer. I have been spending many hours working on personal projects including this site, and will soon have more to post. </p>
-                                 
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        `,
-    data: {
-
-    },
-    methods:{
-
-    }
+    </div>
+    </transition>
+    
+    `
+   
 })
 
 Vue.component('modaltab4',{
     template: `
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Reactivity Frameworks/Web Development</h2>
-                            <hr class="star-primary">
-                            <p class="profiletabs">I have been spending a lot of time recently trying out differnt JS frameworks to help improve workflow. Of the many I have tried, Vue and React are the two I am going to spend the most time learning and working with. Vue has been my favorite of the two as its been very easy to pick up and intergrate into existing projects. I have integrated this site with Vue as well and I hope to learn a lot more as I continue to use the framework. <br> <br> As expected with Web Development, my HTML and CSS knowledge is extensive and I have worked with many differnt libraries and framework such as Bootstrap, Picnic, and Animate. My current Web Development Github repo is located<a href="https://github.com/JohnRader/Vue-Projects"> Here.</a>It is a little thin as of now but I will be adding more projects in the near future.</p>
-                        
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
+    <transition name="modal">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+        
+                <div class="modal-header">
+                    <slot name="header">
+                    Resume
+                    </slot>
                 </div>
+        
+                <div class="modal-body">
+                    <slot name="body">
+                    A link to my full resume can be found <a href="./docs/JohnRader_Resume.pdf"> here.</a>
+                    </slot>
+                </div>
+        
+                <div class="modal-footer">
+                    <slot name="footer">
+                    <button class="btn btn-default" @click="$emit('close')">
+                        Close
+                    </button>
+                    </slot>
+                </div>
+
             </div>
         </div>
     </div>
-    `,
-    data: {
-
-    },
-    methods:{
-
-    }
+    </transition>
+    `
 })
-
-Vue.component('modaltab6',{
+Vue.component('modaltab5',{
     template: `
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Github</h2>
-                            <hr class="star-primary">
-                            <p class="profiletabs">All of my work can be found in my<a href="https://github.com/JohnRader"> GitHub.</a></p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
+    <transition name="modal">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+        
+                <div class="modal-header">
+                    <slot name="header">
+                    Github
+                    </slot>
                 </div>
+        
+                <div class="modal-body">
+                    <slot name="body">
+                    All of my work can be found in my<a href="https://github.com/JohnRader"> GitHub.</a>
+                    </slot>
+                </div>
+        
+                <div class="modal-footer">
+                    <slot name="footer">
+                    <button class="btn btn-default" @click="$emit('close')">
+                        Close
+                    </button>
+                    </slot>
+                </div>
+
             </div>
         </div>
     </div>
-    `,
-    data: {
-
-    },
-    methods:{
-
-    }
+    </transition>
+    `
 })
 
 
@@ -336,11 +401,17 @@ Vue.component('contactinfo',{
 var app = new Vue({
     el: '#app',
     data: {
-        showModal: false
-
+        showModal0: false,
+        showModal1: false,
+        showModal2: false,
+        showModal3: false,
+        showModal4: false,
+        showModal5: false,
     },
     methods: {
+        openModal0() {
+            this.showModal0 = true
+        }
        
-
     }
 })

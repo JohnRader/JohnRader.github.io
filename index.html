@@ -26,32 +26,24 @@
     <div id="app">
 
         <navbar></navbar>
-        
         <profile></profile>
-        
         <portfolio></portfolio>
 
-        <modaltab1></modaltab1>
-        <modaltab2></modaltab2>
-        <modaltab3></modaltab3>
-        <modaltab4></modaltab4>
-        <modaltab6></modaltab6>
+        <modaltab0 v-if="showModal0" @open0="openModal0" @close="showModal0 = false"></modaltab0>
+        <modaltab1 v-if="showModal1" @open1="showModal1 = true" @close="showModal1 = false"></modaltab1>
+        <modaltab2 v-if="showModal2" @open2="showModal2 = true" @close="showModal2 = false"></modaltab2>
+        <modaltab3 v-if="showModal3" @open3="showModal3 = true" @close="showModal3 = false"></modaltab3>
+        <modaltab4 v-if="showModal4" @open4="showModal4 = true" @close="showModal4 = false"></modaltab4>
+        <modaltab5 v-if="showModal5" @open5="showModal5 = true" @close="showModal5 = false"></modaltab5>
 
         <contactinfo></contactinfo>
         
     </div>
-        
     
-    <!--jquery-->
-    <script src="src/vendor/jquery/jquery.min.js"></script>
-
-    <!--Bootstrap JS-->
-    <script src="src/vendor/boostrap/bootstrap.min.js"></script>
-
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="./src/js/main.js"></script>
+    
 </body>
     
 </html>
