@@ -2,7 +2,7 @@
 Vue.component('navbar',{
     template: ` 
     <nav class="navbar navbar-default navbar-fixed-top navbar-custom animated slideInDown text-uppercase">
-        <div class="container">
+        <div id="navbarcontainer"  class="container">
             <div class="navbar-header page-scroll">
                 <a href="#page-top" class="navbar-brand"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </div>
@@ -35,7 +35,7 @@ Vue.component('profile',{
     
             <!--NameTag-->
             <div class="container" id="nameTag">
-                <p class="animated slideInLeft">John Rader</p>
+                <p id="nametag" class="animated slideInLeft">John Rader</p>
                 <hr class="starlight">
                 <p class="small animated slideInLeft">Programmer / Web Developer</p>
                 <p class="small animated slideInLeft text-white">May 2018 Graduate BS Computer Science</p>
@@ -63,9 +63,9 @@ Vue.component('profile',{
 Vue.component('portfolio',{
     template: `
             <section id="portfolio">
-                <div class="container">
-                    <div class="col-lg-12 text-center">
-                        <h2>Portfolio</h2>
+                <div id="tabcontainer" class="container">
+                    <div id="portsection" class="col-lg-12 text-center">
+                        <h2 id="portfoliotag">Portfolio</h2>
                         <hr class="star-primary">
                     </div> 
                     
@@ -223,7 +223,7 @@ Vue.component('modaltab2',{
         
                 <div class="modal-body">
                     <slot name="body">
-                    Of the many differnt languages I have learned and worked with, Python JavaScript and Java are the three in which I would consider myself proficient in. I have spent four years now working with these languages, constantly expanding my knowledge and abilities. I have most recently been working with JavaScript and the many frameworks built for it. My current career aspiration is to become a software engineer, in particular a web developer. I have been spending many hours working on personal projects including this site, and will soon have more to post.
+                    Of the many different languages I have learned and worked with, Python, JavaScript and Java are the three in which I would consider myself proficient in. I have spent four years now working with these languages, constantly expanding my knowledge and abilities. I have most recently been working with JavaScript and the many frameworks built for it. My current career aspiration is to become a software engineer, in particular a web developer. I have been spending many hours working on personal projects including this site, and will soon have more to post.
                     </slot>
                 </div>
         
@@ -349,42 +349,72 @@ Vue.component('contactinfo',{
     template:  `
     <!-- Footer -->
     <footer class="text-center grey-background" id="contactinfo">
-            <div class="footer-above">
+            <div id="above-foot" class="footer-above">
                 <div class="container">
                     <div class="row">
                         <div class="footer-col col-md-4">
                             <h3>Location</h3>
-                            <hr class="bottom">
-                            <p class="contactinfo">Minooka, Illinois, 60447
+                           
+                            <p class="contactinfo footer-info">Minooka, Illinois, 60447
                                 <br>Chicago, Illinois, 60634</p>
                         </div>
 
-                        <div class="footer-col col-md-4">
-                                <h3>Social Media</h3>
-                                <hr class="bottom">
-                                <p class="contactinfo">
-                                    <a href="https://www.facebook.com/john.rader1"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>Facebook<br>
-                                    <a href="https://www.instagram.com/johnrader_/"><i class="fa fa-instagram" aria-hidden="true"></i></a></i>Instagram</p>
+                        <div id="footerinside" class="footer-col col-md-4">
+                                <h3>Around the Web</h3>
+                                
+                                <div id="web" class="row">
+                                    <div  class="col-sm-6">
+                                    <a href="mailto:jcrader238@gmail.com">
+                                        <div id="mailbackground" class="icon-box">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <div  class="col-sm-6">
+                                    <a href="https://www.linkedin.com/in/john-rader">
+                                        <div id="linkedinbackground" class="icon-box">
+                                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <a href="https://github.com/JohnRader">
+                                        <div  id="githubbackground" class="icon-box">
+                                            <i class="fa fa-github" aria-hidden="true"></i>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <div  class="col-sm-6">
+                                    <a href="https://www.instagram.com/johnrader_/">
+                                        <div id="instagrambackground" class="icon-box">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    
+        
+                                </div>
+                            </div>
+                            <div class="footer-col col-md-4">
+                            <h3>Contact Info</h3>
+                            
+                            <p class="contactinfo footer-info">(+1) 815.641.2846<br>
+                                jcrader238@gmail.com</p>
                         </div>
 
-                        <div class="footer-col col-md-4">
-                            <h3>Contact Info</h3>
-                            <hr class="bottom">
-                            <p class="contactinfo">815-641-2846<br>
-                                jcrader238@gmail.com</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-below dark-grey-background">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 footer-text">
-                            Copyright &copy; John Rader 2018
-                        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 footer-text">
+                        Copyright &copy; John Rader 2018
                     </div>
                 </div>
             </div>
+        </div>
         </footer>
         `,
 
