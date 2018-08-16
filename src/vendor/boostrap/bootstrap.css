@@ -601,6 +601,9 @@ a:-webkit-any-link {
   color: #2dd3f0;
 }
 @media (min-width: 0px) {
+ p.small{
+   font-size: .75rem;
+ }
   h3{
     font-size: 1.25rem;
   }
@@ -632,7 +635,7 @@ a:-webkit-any-link {
     max-width: 33.3333%;
   }
   .modal-container{
-    width: 75%;
+    max-width: 90%;
     max-height: 90%;
   }
   p.profiletabs{
@@ -643,8 +646,8 @@ a:-webkit-any-link {
   }
   .row-small{
     padding-bottom: 10%;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 10%;
+    padding-right: 10%;
     align-content: center;
   }
   .profpic{
