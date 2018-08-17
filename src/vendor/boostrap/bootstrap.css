@@ -601,6 +601,45 @@ a:-webkit-any-link {
   color: #2dd3f0;
 }
 @media (min-width: 0px) {
+  .modal-footer {
+    padding: 10px;
+    display: flex;
+  }
+  .modal-header {
+    font-weight: 600;
+    border-bottom: 1px solid #eeeeee;
+    color: #2dd3f0;
+    font-size: 1.25rem;
+    justify-content: space-between;
+  }
+  .modal-footer {
+    border-top: 1px solid #eeeeee;
+    justify-content: flex-end;
+  }
+  .modal-body {
+    font-weight: 600;
+    position: relative;
+    padding: 10px 5px;
+    font-size: .75rem;
+  }
+  
+  .btn-close {
+    border: none;
+    font-size: 1rem;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4AAE9B;
+    background: transparent;
+  }
+
+  .btn-green {
+    color: white;
+    background: #4AAE9B;
+    border: 1px solid #4AAE9B;
+    border-radius: 2px;
+  }
+
   #above-foot{
     padding-bottom: 25px;
   }
@@ -608,7 +647,7 @@ a:-webkit-any-link {
    font-size: 1rem;
  }
   h3{
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   #nametag{
     font-size: 1.75rem;
@@ -619,7 +658,7 @@ a:-webkit-any-link {
     max-width: 100%;
   }
   p.contactinfo{
-    font-size: .5rem;
+    font-size: .75rem;
   }
   .footer-info{
     font-size: 1rem;
@@ -706,8 +745,8 @@ a:-webkit-any-link {
     background-color:#bc2a8d
     }
     #web{
-      padding-left: 40%;
-      padding-right: 40%;
+      padding-left: 37%;
+      padding-right: 37%;
     }
     #mailbackground .fa{
       padding: 10%;
@@ -860,13 +899,13 @@ a:-webkit-any-link {
       text-align: center;
     }
     p.small{
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
 }
 
 @media (min-width: 768px) {
   p.small{
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   #nametag{
     font-size: 3rem;
@@ -1585,9 +1624,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 @media (min-width: 0px){
   .col-sm-4{
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.3333%;
-    max-width: 33%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-lg-12{
+    padding-bottom: 20px;
   }
 }
 @media (min-width: 576px) {

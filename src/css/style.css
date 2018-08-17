@@ -252,14 +252,16 @@ p.profiletabs{
   }
   
   .modal-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
     display: table-cell;
     vertical-align: middle;
   }
   
   .modal-container {
-    width: 500px;
-    margin: 0px auto;
-    padding: 20px 30px;
+    min-width: 302px;
+    margin: auto;
+    padding: 0;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
