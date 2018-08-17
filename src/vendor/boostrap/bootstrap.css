@@ -601,14 +601,17 @@ a:-webkit-any-link {
   color: #2dd3f0;
 }
 @media (min-width: 0px) {
+  #above-foot{
+    padding-bottom: 25px;
+  }
  p.small{
-   font-size: .75rem;
+   font-size: 1rem;
  }
   h3{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
   #nametag{
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .col-md-4{
     -ms-flex: 0 0 100%;
@@ -658,7 +661,13 @@ a:-webkit-any-link {
   }
   
   #Profile.container {
-    padding-top: 100px;
+    padding-top: 150px;
+  }
+  #portfolio{
+    padding-top: 75px;
+  }
+  #contactinfo{
+    padding-top: 25px;
   }
   
   #profPic.img-thumbnail {
@@ -697,30 +706,30 @@ a:-webkit-any-link {
     background-color:#bc2a8d
     }
     #web{
-      padding-left: 30%;
-      padding-right: 30%;
+      padding-left: 40%;
+      padding-right: 40%;
     }
     #mailbackground .fa{
-      padding: 8%;
+      padding: 10%;
       color: whitesmoke;
       font-size: .75rem;
       text-align: center;
     }
     #linkedinbackground .fa{
-      padding: 8%;
+      padding: 10%;
       color: whitesmoke;
       font-size: 1rem;
       text-align: center;
       
     }
     #githubbackground .fa{
-      padding: 8%;
+      padding: 10%;
       color: whitesmoke;
       font-size: 1em;
       text-align: center;
     }
     #instagrambackground .fa{
-      padding: 8%;
+      padding: 10%;
       color: whitesmoke;
       font-size: 1rem;
       text-align: center;
@@ -850,10 +859,15 @@ a:-webkit-any-link {
       font-size: 1rem;
       text-align: center;
     }
-
+    p.small{
+      font-size: 1rem;
+    }
 }
 
 @media (min-width: 768px) {
+  p.small{
+    font-size: 1rem;
+  }
   #nametag{
     font-size: 3rem;
   }
