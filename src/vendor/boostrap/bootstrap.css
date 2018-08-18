@@ -667,9 +667,9 @@ a:-webkit-any-link {
     padding-top: 25px;
   }
   .col-sm-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width:50%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   .col-lg-4{
     -ms-flex: 0 0 33%;
@@ -727,7 +727,10 @@ a:-webkit-any-link {
     font-size: 1rem;
   }
   #footerinside .col-sm-6{
-    padding: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-right: 30%;
+    padding-left: 30%;
     height: 100%;
     }
     .icon-box{
@@ -749,32 +752,32 @@ a:-webkit-any-link {
     background-color:#bc2a8d
     }
     #web{
-      padding-left: 30%;
-      padding-right: 30%;
+      padding-left: 35%;
+      padding-right: 35%;
     }
     #mailbackground .fa{
       padding: 10%;
       color: whitesmoke;
-      font-size: .75rem;
+      font-size: 1.5rem;
       text-align: center;
     }
     #linkedinbackground .fa{
       padding: 10%;
       color: whitesmoke;
-      font-size: 1rem;
+      font-size: 1.75rem;
       text-align: center;
       
     }
     #githubbackground .fa{
       padding: 10%;
       color: whitesmoke;
-      font-size: 1em;
+      font-size: 1.75rem;
       text-align: center;
     }
     #instagrambackground .fa{
       padding: 10%;
       color: whitesmoke;
-      font-size: 1rem;
+      font-size: 1.75rem;
       text-align: center;
     }
 
