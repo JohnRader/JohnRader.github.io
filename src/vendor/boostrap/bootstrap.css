@@ -487,7 +487,7 @@ mark,
   background-color:whitesmoke;
   border: 1px solid EEE;
   border-radius: 0;
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -669,7 +669,7 @@ a:-webkit-any-link {
   .col-sm-6 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width:50%;
   }
   .col-lg-4{
     -ms-flex: 0 0 33%;
@@ -749,8 +749,8 @@ a:-webkit-any-link {
     background-color:#bc2a8d
     }
     #web{
-      padding-left: 36%;
-      padding-right: 36%;
+      padding-left: 30%;
+      padding-right: 30%;
     }
     #mailbackground .fa{
       padding: 10%;
@@ -875,8 +875,8 @@ a:-webkit-any-link {
     background-color:#bc2a8d
     }
     #web{
-      padding-left: 30%;
-      padding-right: 30%;
+      padding-left: 40%;
+      padding-right: 40%;
     }
     #mailbackground .fa{
       padding: 10%;
@@ -1631,9 +1631,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 @media (min-width: 0px){
   .col-sm-4{
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   .col-lg-12{
     padding-bottom: 20px;
